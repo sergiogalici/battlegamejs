@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Battle game</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="dmg-container">
+        <div class="dmg-text"></div>
+      </div>
+      <div class="boss-container">
+        <div class="boss-name">Drog the Worlds Eater</div>
+        <div class="boss-container__hp-bar"></div>
+        <img src="img/boss.png" alt="" />
+      </div>
+      <div class="heroes-container">
+        <div class="hero-one-container">
+          <div class="hero-name">Kevin</div>
+          <div class="hero-one-container__hp-bar"></div>
+          <div class="hero-one-container__choices">
+            <div class="hero-one__basic-attack">BASIC ATTACK</div>
+            <div class="hero-one__defend">DEFEND</div>
+            <div class="hero-one__spells">SPELL</div>
+          </div>
+        </div>
+        <div class="hero-two-container">
+          <div class="hero-name">Luisa</div>
+          <div class="hero-two-container__hp-bar"></div>
+          <div class="hero-two-container__choices">
+            <div class="hero-two__basic-attack">BASIC ATTACK</div>
+            <div class="hero-two__defend">DEFEND</div>
+            <div class="hero-two__spells">SPELL</div>
+          </div>
+        </div>
+        <div class="hero-three-container">
+          <div class="hero-name">Jack</div>
+          <div class="hero-three-container__hp-bar"></div>
+          <div class="hero-three-container__choices">
+            <div class="hero-three__basic-attack">BASIC ATTACK</div>
+            <div class="hero-three__defend">DEFEND</div>
+            <div class="hero-three__spells">SPELL</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <audio id="click" controls style="display: none">
+      <source src="audio/click.wav" type="audio/mpeg" />
+    </audio>
+    <audio id="enter" controls style="display: none">
+      <source src="audio/enter.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="death" controls style="display: none">
+      <source src="audio/death.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="hit" controls style="display: none">
+      <source src="audio/hit.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="game-over" controls style="display: none">
+      <source src="audio/game_over.mp3" type="audio/mpeg" />
+    </audio>
+    <script src="script.js"></script>
+  </body>
+</html>

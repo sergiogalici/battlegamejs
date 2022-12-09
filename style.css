@@ -1,0 +1,307 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-y: hidden;
+    background: rgb(222, 222, 222);
+    font-family: 'Readex Pro', sans-serif;
+}
+
+.main-container {
+    /*display: grid;
+    grid-template-areas: "boss boss boss"
+    "boss boss boss"
+    "boss boss boss"
+    "boss boss boss"
+    "boss boss boss"
+    "heroOne heroTwo heroThree";*/
+    display: flex;
+    flex-direction: column;
+    height: 95vh;
+    width: 95vw;
+    position: relative;
+    gap: .7em;
+
+}
+
+.dmg-container {
+    position: absolute;
+    width: 0;
+    height: 0;
+    background-color: white;
+    z-index: 3;
+    top: 25%;
+    left: calc(25% - 12vw);
+    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+    border-radius: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.4em;
+    transition: all .2s ease-in-out;
+}
+
+.dmg-text {
+    padding: 4em;
+}
+
+.dmg-on {
+    width: 70vw;
+    height: 20vh;
+}
+
+.boss-container {
+    position: relative;
+    grid-area: boss;
+    padding: .9em;
+    border-radius: 1.5em;
+    background-image: url(https://wallpapercave.com/wp/wp10945186.jpg);
+    background-size: cover;
+    height: 60vh;
+    overflow: hidden;
+    width: 100%;
+}
+
+
+.boss-name {
+    font-size: 1.7em;
+    position: absolute;
+    color: white;
+    z-index: 2;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 0px;
+    text-shadow: 0 0 5px black;
+}
+
+.boss-container__hp-bar {
+    width: 100%;
+    background-color: black;
+    height: 3em;
+    border-radius: 2em;
+    position: relative;
+}
+
+.boss-container__hp-bar::before {
+    content: attr(data-label);
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: .5em;
+    top: .5em;
+    bottom: .5em;
+    width: calc(var(--width, 100) * 1%);
+    min-width: 2rem;
+    max-width: calc(100% - 2.9em);
+    background: rgb(77,0,0);
+    background: linear-gradient(346deg, rgb(109, 0, 0) 0%, rgba(148,0,0,1) 49%, rgba(255,37,37,1) 100%);    
+    border-radius: 1em;
+    padding: 1em;
+}
+
+.boss-container__hp-bar::after {
+    content: "HP";
+    position: absolute;
+    color: white;
+    font-size: 30px;
+    top: -.5em;
+    left: .7em;
+    text-shadow: 0 0 6px black;
+}
+
+.boss-container img {
+    position: absolute;
+    /*left: calc(25% - 1.8em + 5vw);*/
+    left: 50%;
+    top: 50%;
+    width: 90vh;
+    max-width: 950px;
+    transform: translate(-50%, -50%);
+
+}
+
+.heroes-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    
+}
+
+.hero-one-container {
+    grid-area: heroOne;
+    padding: .8em;
+}
+
+.hero-two-container {
+    grid-area: heroTwo;
+    padding: .8em;
+}
+
+.hero-three-container {
+    grid-area: heroThree;
+    padding: .8em;
+}
+
+.hero-one-container,
+.hero-two-container,
+.hero-three-container {
+    position: relative;
+    border-radius: 1em;
+    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+    width: 28vw;
+    height: 25vh;
+}
+
+.hero-name {
+    font-size: 1.7em;
+    position: absolute;
+    color: white;
+    z-index: 2;
+    left: 50%;
+    top:  -.1em;
+    transform: translate(-50%, 0);
+    text-shadow: 0 0 5px black;
+}
+
+.hero-one-container__hp-bar,
+.hero-two-container__hp-bar,
+.hero-three-container__hp-bar {
+    width: 100%;
+    background-color: black;
+    height: 3em;
+    border-radius: 2em;
+    position: relative;
+}
+
+.hero-one-container__hp-bar::after,
+.hero-two-container__hp-bar::after,
+.hero-three-container__hp-bar::after {
+    content: "HP";
+    position: absolute;
+    color: white;
+    font-size: 1em;
+    top: 25%;
+    left: 5%;
+    text-shadow: 0 0 6px black;
+}
+
+.hero-one-container__hp-bar::before {
+    content: attr(data-label);
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: .5em;
+    top: .5em;
+    bottom: .5em;
+    width: calc(var(--width, 100) * 1%);
+    min-width: .7rem;
+    max-width: calc(100% - 3em);
+    background: rgb(77,0,0);
+    background-image: linear-gradient(to right, #92fe9d 0%, #00c9ff 100%);
+    border-radius: 1em;
+    padding: 1em;
+}
+
+.hero-two-container__hp-bar::before {
+    content: attr(data-label);
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: .5em;
+    top: .5em;
+    bottom: .5em;
+    width: calc(var(--width, 100) * 1%);
+    min-width: .7rem;
+    max-width: calc(100% - 3em);
+    background: rgb(77,0,0);
+    background-image: linear-gradient(to right, #92fe9d 0%, #00c9ff 100%);
+    border-radius: 1em;
+    padding: 1em;
+}
+
+.hero-three-container__hp-bar::before {
+    content: attr(data-label);
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: .5em;
+    top: .5em;
+    bottom: .5em;
+    width: calc(var(--width, 100) * 1%);
+    min-width: .7rem;
+    max-width: calc(100% - 3em);
+    background: rgb(77,0,0);
+    background-image: linear-gradient(to right, #92fe9d 0%, #00c9ff 100%);
+    border-radius: 1em;
+    padding: 1em;
+}
+
+.hero-one-container__choices,
+.hero-two-container__choices,
+.hero-three-container__choices {
+    font-size: 1.7em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 90%;
+    color: white;
+}
+
+.hero-one__basic-attack,
+.hero-one__defend,
+.hero-one__spells,
+.hero-two__basic-attack,
+.hero-two__defend,
+.hero-two__spells,
+.hero-three__basic-attack,
+.hero-three__defend,
+.hero-three__spells {
+    display: inline-block;
+    position: relative;
+  }
+  
+.inactive::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 4px;
+    border-radius: 4px;
+    bottom: -5px;
+    left: 0;
+    background-color: #ffffff;
+    transform-origin: bottom right;
+    transition: transform 0.15s ease-out;
+}
+  
+.active::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+@media screen and (max-width: 870px) {
+    .hero-one-container__choices,
+    .hero-two-container__choices,
+    .hero-three-container__choices {
+        font-size: 1em;
+        display: flex;
+        flex-direction: column;
+         align-items: center;
+         justify-content: space-around;
+        height: 90%;
+        color: white;
+    }
+
+    .hero-name {
+        font-size: 1em;
+        position: absolute;
+        color: white;
+        z-index: 2;
+        left: 50%;
+        top: 0px;
+        text-shadow: 0 0 5px black;
+    }
+}
